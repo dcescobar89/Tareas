@@ -1,0 +1,33 @@
+QUICK SORT
+
+import time
+def main():
+pass
+
+if __name__ == '__main__':
+def quickSort(vector):
+if len(vector) <= 1:
+return vector
+end = len(vector) - 1
+pivot = vector[end]
+low = []
+high = []
+for num in vector[:end]:
+if num <= pivot:
+low.append(num)
+else:
+high.append(num)
+listaOrdenada = quickSort(low)
+listaOrdenada.append(pivot)
+listaOrdenada.extend(quickSort(high))
+return listaOrdenada
+def main():
+t1=time.clock()
+print("Tiempo Inicio Ejecucion : ",t1)
+l = [1, 6, 7, 2, 76, 45, 23, 4, 8, 12, 11]
+listaOrdenada = quickSort(l)
+print listaOrdenada
+t2=time.clock()
+print("Tiempo tomado Ordenamiento : ",(t2-t1))
+if __name__ == '__main__':
+main()
